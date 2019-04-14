@@ -3,7 +3,7 @@ Create a Reinforcement agent to play agent
 
 This project aims to create an agent that plays tennis rather that control tennis racket. Multi-agent reinforcement technique as described in the paper https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf is implemented to create the agent. 
 
-![Robot Arm](https://github.com/amithmp/Reinforcement-Learning-Tennis/blob/master/tennis.png)
+![Robot Arm](https://github.com/amithmp/Reinforcement-Learning-Tennis/blob/master/tennis.gif)
 
 
 In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
