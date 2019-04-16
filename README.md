@@ -70,7 +70,7 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 
 Agent is created using the techniques mentioned in the above paper, which is suitable for multi agent environments. This agent could solve the environment in 446 (average score for 100-episodes in 546th episode) episodes as below.
 
-![Robot Arm](https://github.com/amithmp/Reinforcement-Learning-Tennis/blob/master/result_chart.jpg)
+![Robot Arm](https://github.com/amithmp/Reinforcement-Learning-Tennis/blob/master/result_chart.png)
 
 ## Algorithm and Hyperparameters
 
