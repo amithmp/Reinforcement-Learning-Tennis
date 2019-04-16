@@ -68,17 +68,18 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 # Solution 
 
 
-Agent is created using the DDPG (Deep Deterministic Policy Gradient) suitable for stochastic and continuous action spaces. This agent could solve the environment in 36 episodes as below
+Agent is created using the techniques mentioned in the above paper, which is suitable for multi agent environments. This agent could solve the environment in 446 (average score for 100-episodes in 546th episode) episodes as below.
 
-![Robot Arm](https://github.com/amithmp/Reinforcement-Learning---Continuous-Control/blob/master/Result_chart.jpg)
+![Robot Arm](https://github.com/amithmp/Reinforcement-Learning-Tennis/blob/master/Result_chart.jpg)
 
 ## Algorithm and Hyperparameters
 
-This agent uses 2-layer LSTM network for both actor and critic. LSTM is chosen with the intuition that ideal action of the  agent depends on the previous action, state etc and LSTM is good to represent temporal sequences. Number of neurons is set to 256 to learn complex representation and relationship among dimensions of the state. This is followed by a 32 neuron fully conected network.
+This agent uses 2-layer LSTM network for both actor and critic. LSTM is chosen with the intuition that ideal action of the agent depends on the previous action, state etc and LSTM is good to represent temporal sequences. Number of neurons is set to 256 to learn complex representation and relationship among dimensions of the state. 
 
-**Learning Method**: Both actor and critic are set to learn (i.e. network is updated) every 50 timesteps. Each learning step involves 5 epochs.
+**Learning Method**: Both actor and critic are set to learn (i.e. network is updated) every 2 timesteps. Each learning step involves two epochs to stabilize the network.
 
-**Learning Rate**: Learning rate is chosen to 1e-3 for the actor and 3e-3 for the critic network after multiple experiments. Further, learning rate scheduler is used wherein the learning rate decays by a factor of 0.1 at each epoch. 
+**Learning Rate**: Learning rate is chosen to 1e-3 for the actor and 3e-3 after multiple experiments. Further, learn rate scheduler is used wherein the learning rate decays by a factor of 0.01 at each epoch to learn with smaller learning rates and stabilize the network.
 
 **Optimizer**: RMSPROP is used after trying ADAM initially. RMSPROP is found to be suitable for RNNs in many cases.
 
+**Tau(parameter that controls soft update of target networks)**: Tau is set to 3e-2, slightly higher than the value used for other environments such as continuous control of robotic arm. This is episodic task and also the number of time steps to complete an episode is relatively smaller , therefore smaller Tau value is required to ensure target networks are adequately updated. 
