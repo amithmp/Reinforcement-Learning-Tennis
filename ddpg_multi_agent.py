@@ -159,8 +159,8 @@ class MultiAgent:
         self.t_step = 0
         
         if load_file:
-            file_suffix = 'checkpoint-%s-%i.pth'
-            for agent_i, save_agent in enumerate(self.agents):
+            file_suffix = load_file
+            for agent_i, save_agent in enumerate(self.ddpg_agents):
                 actor_path = file_suffix % ('actor', agent_i)
                 critic_path = file_suffix % ('critic', agent_i)
                 actor_file = torch.load(actor_path, map_location='cpu')
