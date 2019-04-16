@@ -67,7 +67,6 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 
 # Solution 
 
-
 Agent is created using the techniques mentioned in the above paper, which is suitable for multi agent environments. This agent could solve the environment in 446 (average score for 100-episodes in 546th episode) episodes as below.
 
 ![Robot Arm](https://github.com/amithmp/Reinforcement-Learning-Tennis/blob/master/result_chart.png)
@@ -83,3 +82,9 @@ This agent uses 2-layer LSTM network for both actor and critic. LSTM is chosen w
 **Optimizer**: RMSPROP is used after trying ADAM initially. RMSPROP is found to be suitable for RNNs in many cases.
 
 **Tau(parameter that controls soft update of target networks)**: Tau is set to 3e-2, slightly higher than the value used for other environments such as continuous control of robotic arm. This is episodic task and also the number of time steps to complete an episode is relatively smaller , therefore smaller Tau value is required to ensure target networks are adequately updated. 
+
+# Training and Using the agent
+
+Run the cells from 1 to 8 in Tennis.ipynb to train the RL agent. You can modify various hyperparameters in constants.py to finetune the algorithm. Program will terminate after attaining the target score (set to 0.5 in constants.py) or after reaching maximum number of episodes. Trained agent (weights of actor and critic networks for both the agents) are saved in files names starting from "checkpoint...".
+
+Run the cell number 10 to load the stored agent and see the tennis playing agents in action (visualization not supported). You can expect most of the games to end with score of more than 2.5. If you running this cell (10) to use the agent independently, ensure to run the cells 1 to 5 to set the environment.
