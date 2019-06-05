@@ -1,5 +1,5 @@
 # Reinforcement-Tennis
-Create a Reinforcement agent to play agent
+Create a Reinforcement agent to play tennis
 
 This project aims to create an agent that plays tennis rather that control tennis racket. Multi-agent reinforcement technique as described in the paper https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf is implemented to create the agent. 
 
